@@ -1,8 +1,7 @@
-import 'package:app_flutter_preferencias/src/pages/home_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
 class UserPreference {
+
   static final UserPreference _instancia = new UserPreference._internal();
 
   factory UserPreference() {
@@ -17,42 +16,41 @@ class UserPreference {
     this._prefs = await SharedPreferences.getInstance();
   }
 
-  //Ninguna de estas se usa
-  /*bool _colorSecundario;
-  int _genero;
-  String _nombre;*/
-
-  //GET & SET'S
+  // GET y SET del Genero
   get genero {
-    return _prefs.getInt('currentGenero') ?? 1;
+    return _prefs.getInt('genero') ?? 1;
   }
 
-  set genero(int value) {
-    _prefs.setInt('currentGenero', value);
+  set genero( int value ) {
+    _prefs.setInt('genero', value);
   }
 
+  // GET y SET del _colorSecundario
   get colorSecundario {
-    return _prefs.getBool('currentColor') ?? false;
+    return _prefs.getBool('colorSecundario') ?? false;
   }
 
-  set colorSecundario(bool value) {
-    _prefs.setBool('currentColor', value);
+  set colorSecundario( bool value ) {
+    _prefs.setBool('colorSecundario', value);
   }
 
-  get nombre {
-    return _prefs.getString('currentNombre') ?? '';
+
+  // GET y SET del nombreUsuario
+  get nombreUsuario {
+    return _prefs.getString('nombreUsuario') ?? '';
   }
 
-  set nombre(String value) {
-    _prefs.setString('currentNombre', value);
+  set nombreUsuario( String value ) {
+    _prefs.setString('nombreUsuario', value);
   }
 
+    // GET y SET de la última página
   get ultimaPagina {
-    return _prefs.getString('currentPage') ?? HomePage.routeName;
+    return _prefs.getString('ultimaPagina') ?? 'home';
   }
 
-  set ultimaPagina(String value) {
-    _prefs.setString('currentPage', value);
+  set ultimaPagina( String value ) {
+    _prefs.setString('ultimaPagina', value);
   }
 
 }

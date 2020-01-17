@@ -26,7 +26,7 @@ class _SettingsPageState extends State<SettingsPage> {
     //cargarPreferencia();
     _genero = prefs.genero;
     _secundario = prefs.colorSecundario;
-    _nombre = prefs.nombre;
+    _nombre = prefs.nombreUsuario;
     prefs.ultimaPagina = SettingsPage.routeName;
     _textEditingController = new TextEditingController(
       text: _nombre
@@ -89,7 +89,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 icon: Icon(Icons.person_add),
               ),
               onChanged: (value){
-                prefs.nombre = value;
+                prefs.nombreUsuario= value;
               },
             ),
           )

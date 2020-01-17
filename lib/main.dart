@@ -3,12 +3,13 @@ import 'package:app_flutter_preferencias/src/pages/settings_page.dart';
 import 'package:app_flutter_preferencias/src/shared/user_preference.dart';
 import 'package:flutter/material.dart';
 
-void main() async { 
+void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = new UserPreference();
   await prefs.initPrefs();
 
   runApp(MyApp());
+
 }
  
 class MyApp extends StatelessWidget {
@@ -22,8 +23,8 @@ class MyApp extends StatelessWidget {
       title: 'Preferencias',
       initialRoute: prefs.ultimaPagina,
       routes: {
-        HomePage.routeName: (context) => HomePage(),
-        SettingsPage.routeName: (context) => SettingsPage(),
+        HomePage.routeName     : ( BuildContext context ) => HomePage(),
+        SettingsPage.routeName : ( BuildContext context ) => SettingsPage(),
       },
     );
   }

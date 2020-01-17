@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
           Divider(),
           Text('Género: ${prefs.genero}'),
           Divider(),
-          Text('Nombre Usuario: ${prefs.nombre}'),
+          Text('Nombre Usuario: ${prefs.nombreUsuario}'),
           Divider()
         ],
       ),
