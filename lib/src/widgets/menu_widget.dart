@@ -2,9 +2,9 @@ import 'package:app_flutter_preferencias/src/pages/home_page.dart';
 import 'package:app_flutter_preferencias/src/pages/settings_page.dart';
 import 'package:flutter/material.dart';
 
-class MenuWidget extends StatelessWidget {
-  const MenuWidget({Key key}) : super(key: key);
 
+class MenuWidget extends StatelessWidget {
+  
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -12,8 +12,7 @@ class MenuWidget extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           DrawerHeader(
-            child: Container(
-            ),
+            child: Container(),
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/menu.jpg'),
@@ -21,32 +20,34 @@ class MenuWidget extends StatelessWidget {
               )
             ),
           ),
+
           ListTile(
-            leading: Icon(Icons.pages, color: Colors.blue,),
-            title: Text('Pages'),
-            onTap: (){
-              Navigator.pushReplacementNamed(context, HomePage.routeName);
-            },
+            leading: Icon( Icons.pages, color: Colors.blue ),
+            title: Text('Home'),
+            onTap: ()=> Navigator.pushReplacementNamed(context, HomePage.routeName ) ,
           ),
+
           ListTile(
-            leading: Icon(Icons.party_mode, color: Colors.blue,),
+            leading: Icon( Icons.party_mode, color: Colors.blue ),
             title: Text('Party Mode'),
-            onTap: (){},
+            onTap: (){ },
           ),
+
           ListTile(
-            leading: Icon(Icons.people, color: Colors.blue,),
+            leading: Icon( Icons.people, color: Colors.blue ),
             title: Text('People'),
-            onTap: (){},
+            onTap: (){ },
           ),
+
           ListTile(
-            leading: Icon(Icons.settings, color: Colors.blue,),
+            leading: Icon( Icons.settings, color: Colors.blue ),
             title: Text('Settings'),
-            onTap: () {
-              //Navigator.pop(context);
-              //Navigator.pushNamed(context, SettingsPage.routeName)
-              Navigator.pushReplacementNamed(context, SettingsPage.routeName);
-            },
+            onTap: (){
+              // Navigator.pop(context);
+              Navigator.pushReplacementNamed(context, SettingsPage.routeName  );
+            }
           ),
+
         ],
       ),
     );
